@@ -606,9 +606,9 @@ function Hero() {
           }}
         >
           {[
-            ["15+", "Apps Built"],
-            ["3+", "Years Exp"],
-            ["10+", "Happy Clients"],
+            ["5+", "Apps Built"],
+            ["3 Live", "On App Store"],
+            ["1+", "Year Exp"],
           ].map(([num, label], idx) => (
             <div
               key={label}
@@ -742,13 +742,13 @@ function About() {
           {[
             {
               emoji: "⚡",
-              label: "3+ Yrs Exp",
+              label: "1+ Yr Exp",
               pos: { top: -16, right: isTablet ? 40 : -20 },
               color: "#ffbe0b",
             },
             {
               emoji: "🏆",
-              label: "15+ Apps",
+              label: "5+ Apps",
               pos: { bottom: 10, right: isTablet ? 20 : -40 },
               color: "#00f5d4",
             },
@@ -848,10 +848,10 @@ function About() {
               fontSize: isMobile ? "0.92rem" : "1rem",
             }}
           >
-            I'm a passionate React Native Developer specializing in building
-            cross-platform mobile applications for both iOS and Android. I focus
-            on writing clean, efficient code that delivers smooth 60fps
-            experiences.
+            I'm a passionate React Native Developer with hands-on experience
+            building cross-platform mobile applications for both iOS and
+            Android. I focus on writing clean, efficient code that delivers
+            smooth 60fps experiences.
           </p>
 
           <p
@@ -1098,8 +1098,8 @@ const PROJECTS = [
   },
   {
     title: "SafetyDrop",
-    desc: "A business-focused safety management app that helps companies manage OSHA compliance, employee training, and safety documentation. Built to streamline workflows and reduce operational costs through structured data handling.",
-    tags: ["React Native", "Forms", "Enterprise App"],
+    desc: "A business-focused safety management app that helps companies manage OSHA compliance, employee training, and safety documentation. Built with Angular & Ionic to streamline workflows and reduce operational costs through structured data handling.",
+    tags: ["Angular", "Ionic", "Enterprise App"],
     emoji: "🦺",
     color: "#00f5d4",
     platform: "iOS & Android",
@@ -1108,8 +1108,8 @@ const PROJECTS = [
   },
   {
     title: "Save Me – RECi Security",
-    desc: "A personal safety and emergency response app with panic alert functionality. Users can instantly send alerts, share location, and trigger emergency communication with a single action for real-time assistance.",
-    tags: ["React Native", "Security", "Location"],
+    desc: "A personal safety and emergency response app built natively in Swift. Users can instantly send panic alerts, share live location, and trigger emergency communication with a single tap for real-time assistance.",
+    tags: ["Swift", "iOS Native", "Location"],
     emoji: "🚨",
     color: "#ffbe0b",
     platform: "iOS",
@@ -1339,28 +1339,28 @@ function Projects() {
 
 const EXP = [
   {
-    year: "2024 — Present",
-    role: "Senior React Native Developer",
-    company: "MobileTech Solutions",
-    desc: "Leading the mobile development team to build and ship cross-platform apps for 50K+ users. Improved app performance by 35% and reduced crash rate to under 0.1%.",
-    color: "#ff3cac",
-    achievements: ["50K+ Users", "35% Faster", "Team Lead"],
-  },
-  {
-    year: "2023 — 2024",
+    year: "Aug 2025 — Present",
     role: "React Native Developer",
-    company: "AppVenture Inc.",
-    desc: "Built 5 production-level apps from scratch including an e-commerce platform and a health tracker. Integrated Stripe, Google Maps, and Firebase SDKs.",
-    color: "#2b86c5",
-    achievements: ["5 Apps Shipped", "Stripe Integration", "Maps API"],
+    company: "Vision Vivante Pvt. Ltd.",
+    desc: "Currently working on building high-quality cross-platform mobile applications, contributing to product development and delivering pixel-perfect, performant experiences for both iOS and Android users.",
+    color: "#ff3cac",
+    achievements: ["iOS & Android", "Current Role", "React Native"],
   },
   {
-    year: "2022 — 2023",
-    role: "Junior Mobile Developer",
-    company: "StartupHub",
-    desc: "Started professional journey in mobile development. Contributed to 3 apps, fixed 200+ bugs, and learned the full mobile development lifecycle from design handoff to App Store submission.",
+    year: "Jan 2025 — Jul 2025",
+    role: "Junior React Native Developer",
+    company: "Techner Solutions",
+    desc: "Developed and maintained cross-platform mobile applications using React Native. Collaborated with design and backend teams to deliver smooth, production-ready features and improve overall app performance.",
+    color: "#2b86c5",
+    achievements: ["React Native", "Cross-Platform", "Production Apps"],
+  },
+  {
+    year: "Aug 2024 — Nov 2024",
+    role: "React Native Intern",
+    company: "Deftsoft Informatics Pvt. Ltd.",
+    desc: "Kickstarted my professional journey with a hands-on internship in React Native development. Gained real-world experience building mobile app features, debugging, and working within an agile team environment.",
     color: "#00f5d4",
-    achievements: ["3 Apps", "200+ Bug Fixes", "App Store Launch"],
+    achievements: ["Internship", "React Native", "Agile Team"],
   },
 ];
 
