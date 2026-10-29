@@ -1487,13 +1487,14 @@ function Experience() {
   );
 }
 
-// Contact form delivery. Set ONE of these in your hosting environment:
-//   VITE_CONTACT_ENDPOINT  e.g. a Formspree URL (https://formspree.io/f/xxxx)
-//   VITE_CONTACT_EMAIL     opens the visitor's email app addressed to you
-// If neither is set the form says it is not connected instead of pretending
-// the message was sent.
+// Contact form delivery:
+//   VITE_CONTACT_ENDPOINT  (optional) e.g. a Formspree URL. When set, the form
+//                          posts there and messages land in your inbox.
+//   Otherwise the form opens the visitor's email app addressed to CONTACT_EMAIL
+//   (override with VITE_CONTACT_EMAIL if needed).
 const CONTACT_ENDPOINT = import.meta.env.VITE_CONTACT_ENDPOINT || "";
-const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL || "";
+const CONTACT_EMAIL =
+  import.meta.env.VITE_CONTACT_EMAIL || "jatin0063@gmail.com";
 const LINKEDIN_URL = "https://www.linkedin.com/in/jatin-sharma-80645924b/";
 const GITHUB_URL = "https://github.com/jatindev7846";
 
@@ -1605,7 +1606,14 @@ function Contact() {
         }}
       >
         Have a mobile app idea? Want to collaborate or just say hello? I'm
-        always open to new opportunities.
+        always open to new opportunities. You can also email me directly at{" "}
+        <a
+          href={`mailto:${CONTACT_EMAIL}`}
+          style={{ color: "#00f5d4", textDecoration: "none", fontWeight: 700 }}
+        >
+          {CONTACT_EMAIL}
+        </a>
+        .
       </p>
 
       <div
@@ -1754,11 +1762,12 @@ function Contact() {
         {[
           { label: "GitHub", color: "#fff", href: GITHUB_URL },
           { label: "LinkedIn", color: "#2b86c5", href: LINKEDIN_URL },
+          { label: "Email", color: "#00f5d4", href: `mailto:${CONTACT_EMAIL}` },
         ].map((s) => (
           <a
             key={s.label}
             href={s.href}
-            target="_blank"
+            target={s.href.startsWith("http") ? "_blank" : undefined}
             rel="noreferrer"
             style={{
               color: s.color,
