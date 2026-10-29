@@ -1080,7 +1080,7 @@ const PROJECTS = [
     emoji: "🧯",
     color: "#ffbe0b",
     platform: "Website",
-    live: "https://www.gayatribusinessgroup.com",
+    live: "https://www.gayatribusinessgroup.com/",
     liveLabel: "↗ Visit Website",
     github: "",
   },
