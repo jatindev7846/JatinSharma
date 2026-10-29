@@ -1488,8 +1488,9 @@ function Experience() {
 }
 
 // Contact form delivery:
-//   VITE_CONTACT_ENDPOINT  (optional) e.g. a Formspree URL. When set, the form
-//                          posts there and messages land in your inbox.
+//   VITE_CONTACT_ENDPOINT  (optional) a Google Apps Script URL (saves each
+//                          message as a row in a Google Sheet, see
+//                          contact-sheet/README.md) or a Formspree URL.
 //   Otherwise the form opens the visitor's email app addressed to CONTACT_EMAIL
 //   (override with VITE_CONTACT_EMAIL if needed).
 const CONTACT_ENDPOINT = import.meta.env.VITE_CONTACT_ENDPOINT || "";
@@ -1519,19 +1520,32 @@ function Contact() {
     if (CONTACT_ENDPOINT) {
       setSending(true);
       try {
-        const res = await fetch(CONTACT_ENDPOINT, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            name: form.name,
-            email: form.email,
-            message: form.msg,
-          }),
-        });
-        if (!res.ok) throw new Error("bad response");
+        const payload = {
+          name: form.name,
+          email: form.email,
+          message: form.msg,
+        };
+        if (CONTACT_ENDPOINT.includes("script.google.com")) {
+          // Google Apps Script (saves to a Google Sheet) does not allow
+          // cross-origin reads, so send a simple request; delivery cannot be
+          // confirmed from the browser, only that it left without a network error.
+          await fetch(CONTACT_ENDPOINT, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify(payload),
+          });
+        } else {
+          const res = await fetch(CONTACT_ENDPOINT, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify(payload),
+          });
+          if (!res.ok) throw new Error("bad response");
+        }
         setSent("sent");
         setForm({ name: "", email: "", msg: "" });
       } catch {
