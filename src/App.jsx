@@ -608,7 +608,7 @@ function Hero() {
         >
           {[
             ["5+", "Apps Built"],
-            ["3 Live", "On App Store"],
+            ["3 Live", "On the Stores"],
             ["2+", "Years Exp"],
           ].map(([num, label], idx) => (
             <div
@@ -1052,33 +1052,47 @@ function Skills() {
 
 const PROJECTS = [
   {
+    title: "DatePALOP",
+    desc: "A social networking app for people from Portuguese-speaking African countries and their diasporas, with a professional networking mode and a dating mode. Includes profiles, groups, events, chat, swipe-based matching, profile verification and premium membership.",
+    tags: ["React Native", "Social Networking", "Chat"],
+    emoji: "💬",
+    color: "#ff3cac",
+    platform: "iOS & Android",
+    live: "https://apps.apple.com/app/id6748463185",
+    liveLabel: "↗ View on App Store",
+    github: "",
+  },
+  {
+    title: "Gentle Hold",
+    desc: "A mobile app that gives people a gentle, non-judgmental space while they go through grief, loss and emotional healing.",
+    tags: ["React Native", "Health & Wellness", "Mobile App"],
+    emoji: "🤍",
+    color: "#00f5d4",
+    platform: "Android",
+    live: "https://play.google.com/store/apps/details?id=com.gentlehold",
+    liveLabel: "↗ View on Google Play",
+    github: "",
+  },
+  {
+    title: "Gayatri Business Group",
+    desc: "A responsive business website for a fire safety solutions company, showcasing fire extinguishers, hydrant systems, hoses, valves and accessories, with direct ordering over WhatsApp.",
+    tags: ["Website", "Responsive", "WhatsApp Ordering"],
+    emoji: "🧯",
+    color: "#ffbe0b",
+    platform: "Website",
+    live: "https://gayatribusinessgroup.com",
+    liveLabel: "↗ Visit Website",
+    github: "",
+  },
+  {
     title: "Salonist – Salon & Spa Booking",
     desc: "A full-featured salon & spa booking platform that allows users to discover nearby salons, book services instantly, and manage appointments. Focused on smooth UX, real-time availability, and performance optimization for seamless bookings.",
     tags: ["React Native", "Booking System", "UI/UX"],
     emoji: "💇‍♀️",
-    color: "#ff3cac",
+    color: "#784ba0",
     platform: "iOS & Android",
     live: "https://apps.apple.com/in/app/salonist-salon-spa-booking/id6511235328",
-    github: "",
-  },
-  {
-    title: "SafetyDrop",
-    desc: "A business-focused safety management app that helps companies manage OSHA compliance, employee training, and safety documentation. Built with Angular & Ionic to streamline workflows and reduce operational costs through structured data handling.",
-    tags: ["Angular", "Ionic", "Enterprise App"],
-    emoji: "🦺",
-    color: "#00f5d4",
-    platform: "iOS & Android",
-    live: "https://apps.apple.com/in/app/safetydrop/id1448668332",
-    github: "",
-  },
-  {
-    title: "Save Me – RECi Security",
-    desc: "A personal safety and emergency response app built natively in Swift. Users can instantly send panic alerts, share live location, and trigger emergency communication with a single tap for real-time assistance.",
-    tags: ["Swift", "iOS Native", "Location"],
-    emoji: "🚨",
-    color: "#ffbe0b",
-    platform: "iOS",
-    live: "https://apps.apple.com/in/app/save-me-reci-security/id6736370555",
+    liveLabel: "↗ View on App Store",
     github: "",
   },
   {
@@ -1224,7 +1238,7 @@ function ProjectCard({ p, i }) {
               textDecoration: "none",
             }}
           >
-            ↗ View on App Store
+            {p.liveLabel || "↗ View on App Store"}
           </a>
         )}
         {p.github ? (
@@ -1277,7 +1291,7 @@ function Projects() {
         label="PROJECTS"
         title={
           <>
-            Apps I've <Grad>Built & Shipped</Grad>
+            Projects I've <Grad>Built & Shipped</Grad>
           </>
         }
       />
