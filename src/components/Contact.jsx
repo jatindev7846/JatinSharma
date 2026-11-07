@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Split from "./Split";
+import { track } from "../analytics";
 import { CONTACT_ENDPOINT, EMAIL, LINKEDIN_URL, GITHUB_URL } from "../data";
 
 // Delivery (unchanged from the previous site):
@@ -18,6 +19,7 @@ export default function Contact() {
   const copyEmail = async () => {
     try {
       await navigator.clipboard.writeText(EMAIL);
+      track("copy_email");
       setCopied(true);
       setTimeout(() => setCopied(false), 1800);
     } catch {
@@ -57,6 +59,7 @@ export default function Contact() {
           });
           if (!res.ok) throw new Error("bad response");
         }
+        track("generate_lead", { method: "form" });
         setState("sent");
         setForm({ name: "", email: "", msg: "" });
       } catch {
@@ -69,6 +72,7 @@ export default function Contact() {
     const subject = encodeURIComponent(`Project enquiry from ${form.name}`);
     const body = encodeURIComponent(`${form.msg}\n\n— ${form.name} (${form.email})`);
     window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+    track("generate_lead", { method: "mailto" });
     setState("mail");
   };
 

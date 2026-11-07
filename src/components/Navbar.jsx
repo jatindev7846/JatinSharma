@@ -75,6 +75,7 @@ export default function Navbar() {
             className="btn btn--sm btn--accent nav__cta"
             href="#contact"
             data-magnetic
+            data-track="cta_hire_me"
           >
             Hire me
           </a>
