@@ -120,7 +120,23 @@ export const PROJECTS = [
     variant: "site",
     device: "browser",
     shot: null,
+    url: "gayatribusinessgroup.com",
+    cta: "Order on WhatsApp",
     links: [{ label: "Visit website", href: "https://www.gayatribusinessgroup.com/" }],
+  },
+  {
+    id: "salonist-web",
+    title: "Salonist.io",
+    kind: "SaaS website · Responsive",
+    desc: "The website for Salonist, cloud software that helps salons and spas run online booking, POS, inventory, staff payroll and client marketing from one dashboard. A clean, responsive site that explains the product, pricing and integrations at a glance.",
+    tags: ["Website", "SaaS", "Responsive"],
+    color: "#4fe0c0",
+    variant: "site",
+    device: "browser",
+    shot: null,
+    url: "salonist.io",
+    cta: "Start free trial",
+    links: [{ label: "Visit website", href: "https://salonist.io/" }],
   },
 ];
 

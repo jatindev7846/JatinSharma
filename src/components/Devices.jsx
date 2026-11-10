@@ -152,7 +152,7 @@ export function Phone({ variant = "social", color = "#c8ff3d", shot, title = "",
   );
 }
 
-export function Browser({ color = "#ff7a45", shot, title = "", url = "gayatribusinessgroup.com" }) {
+export function Browser({ color = "#ff7a45", shot, title = "", url = "gayatribusinessgroup.com", cta = "Order on WhatsApp" }) {
   return (
     <div className="browser" style={{ "--c": color }}>
       <div className="browser__bar">
@@ -176,7 +176,7 @@ export function Browser({ color = "#ff7a45", shot, title = "", url = "gayatribus
               <div className="sk-hero__t">
                 <i style={{ width: "74%" }} />
                 <i style={{ width: "52%" }} />
-                <span className="sk-cta">Order on WhatsApp</span>
+                <span className="sk-cta">{cta}</span>
               </div>
               <div className="sk-hero__img" />
             </div>

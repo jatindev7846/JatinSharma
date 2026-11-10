@@ -40,7 +40,7 @@ function Project({ p, i }) {
       <div className="project__media" data-reveal data-scroll="parallax" data-tilt style={{ "--d": 1 }}>
         <div className="project__halo" aria-hidden="true" />
         {p.device === "browser" ? (
-          <Browser color={p.color} shot={p.shot} title={p.title} />
+          <Browser color={p.color} shot={p.shot} title={p.title} url={p.url} cta={p.cta} />
         ) : (
           <Phone variant={p.variant} color={p.color} shot={p.shot} title={p.title} tilt />
         )}
